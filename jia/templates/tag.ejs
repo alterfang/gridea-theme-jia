@@ -1,0 +1,19 @@
+<html>
+  <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+        <header class="header mdui-m-b-3">
+          <%- include('./includes/header') %>
+        </header>
+        <div class="mdui-container">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-6 mdui-col-offset-md-3 ">
+                          <%- include('./includes/index-list') %>
+                          <%- include('./includes/yema') %>
+
+                        </div>
+                 </div>
+          
+        </div>
+        <%- include('./includes/footer') %>
+    </body>
+</html>

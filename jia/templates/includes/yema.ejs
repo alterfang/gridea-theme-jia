@@ -1,0 +1,8 @@
+                         <nav class="mdui-m-y-3">
+                         <% if (pagination.prev) { %>
+                          <button class="mdui-btn mdui-color-theme-500 yinying mdui-btn-icon mdui-float-left"><a href="<%= pagination.prev %>"><i class="mdui-icon mdui-text-color-white material-icons">&#xe5c4;</i></a></button>
+                         <% } %>
+                         <% if (pagination.next) { %>
+                          <button class="mdui-btn mdui-color-theme-500 yinying mdui-btn-icon mdui-float-right"><a href="<%= pagination.next %>"><i class="mdui-icon mdui-text-color-white material-icons">&#xe5c8;</i></a></button>
+                          <% } %>
+                         </nav>

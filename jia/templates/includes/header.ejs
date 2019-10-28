@@ -1,0 +1,12 @@
+                <button class="mdui-btn daohang mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
+                <ul class="mdui-menu " id="demo-attr-cascade">
+                <% menus.forEach(function (menu) { %>
+                        <li class="mdui-menu-item">
+                          <a href="<%= menu.link %>" class="mdui-ripple"><%= menu.name %></a>
+                        </li>
+                <% }); %>
+                      </ul>
+                      <div class="mdui-text-center">
+                      <div class="mdui-typo-display-4 mdui-m-b-3 index-title"><%= themeConfig.siteName %></div>
+                      <div class="mdui-typo-headline"><%- themeConfig.siteDescription %></div>
+                      </div>

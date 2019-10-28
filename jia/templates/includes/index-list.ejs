@@ -1,0 +1,22 @@
+                           <% posts.forEach(function(post) { %>
+                            <article class="mdui-m-t-4 index-list mdui-shadow-15 mdui-hoverable mdui-p-a-2 q">
+                                    <div class="mdui-row">
+                                            <div class="mdui-col-xs-12 ">
+                                              <div class="mdui-row mdui-m-b-2">
+                                                <div class="mdui-col-xs-12 mdui-col-sm-8">
+                                                    <div class="mdui-typo-headline mdui-m-b-2"><a href="<%= post.link %>" class="index-list-title"><%= post.title %></a></div>
+                                                    <div class="mdui-typo-body-2 index-list-neirong"><%- post.abstract %></div>
+                                                </div>
+                                                <div class="mdui-col-xs-12 mdui-col-sm-4 "><div class="index-list-img mdui-shadow-8"<% if (themeConfig.showFeatureImage && post.feature) { %> style="background-image:url(<%= post.feature %>)"<% } %>></div></div>
+                                              </div>
+                                              <% post.tags.forEach(function(tag) { %>
+                                              <a href="<%= tag.link %>" class="index-list-biaoqian mdui-float-left yinying"><%= tag.name %></a>
+                                               <% }); %>
+                                              <a href="<%= post.link %>" class="index-list-biaoqian mdui-float-right yinying"><%= post.dateFormat %></a>
+                                              
+
+                                            </div>
+                                          </div>
+
+                            </article>
+<% }); %>

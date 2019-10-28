@@ -1,0 +1,55 @@
+<html>
+  <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+        <header class="index-img mdui-m-b-3" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background-image: url(<%= post.feature %>);" <% } %>>
+          <%- include('./includes/header-post') %>
+        </header>
+        <div class="mdui-container post">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                         <article class="mdui-shadow-10 mdui-p-a-2 post-list">
+                           <div class="mdui-typo-display-1 mdui-m-b-3"><%= post.title %></div>
+                           <a  class="index-list-biaoqian "><%= post.dateFormat %></a>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><%- post.content %></div>
+                              <div class="mdui-divider mdui-m-t-3"></div>
+                              <div class="mdui-row-xs-2 mdui-m-t-2">
+  <div class="mdui-col"> <% if (post.prevPost && !post.hideInList) { %><div class="mdui-text-left"><a href="<%= post.prevPost.link %>"><%= post.prevPost.title %></a></div><% } %></div>
+ <div class="mdui-col"><% if (post.nextPost && !post.hideInList) { %><div class="mdui-text-right "><a href="<%= post.nextPost.link %>"><%= post.nextPost.title %></a></div> <% } %></div>
+                                </div>
+                                <div class="mdui-divider mdui-m-t-2"></div>
+   <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+          <% if (commentSetting.commentPlatform === 'gitalk') { %>
+            <%- include('./includes/gitalk') %>
+          <% } %>
+
+          <% if (commentSetting.commentPlatform === 'disqus') { %>
+            <%- include('./includes/disqus') %>
+          <% } %>
+        <% } %>
+ <%- include('./includes/pingjun') %>
+                         </article>
+                 <div class="toc-container mdui-float-right">
+                <%- post.toc %>
+              </div>
+
+                        </div>
+                 </div>
+          
+        </div>
+        <script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $.viewImage({
+                    'target'  : '.post-neirong img',
+                    'exclude' : '.vsmile-icons img , .song-links-item img',
+                    'delay'   : 300
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
+        <%- include('./includes/footer') %>
+    </body>
+</html>

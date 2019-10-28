@@ -1,0 +1,50 @@
+<html>
+  <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+        <header class="header mdui-m-b-3">
+          <%- include('./includes/header') %>
+        </header>
+        <div class="mdui-container">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-10 mdui-col-offset-md-1 ">
+ 
+                           
+  <% let years = []; posts.forEach((item) => { const year = item.date.substring(0, 4); if (!years.includes(year)) { years.push(year); } }); %>
+   <% years.forEach(function(year) { %>
+
+
+
+                               <div class="mdui-typo-display-1 mdui-m-b-2 mdui-m-l-1">
+                               <div class="mdui-row"><div class="mdui-col-xs-12"><%- year %></div>
+                               </div>
+                                <div class="mdui-row-md-3 mdui-row-xs-1">
+                               <% posts.forEach(function(post) { %>
+        <%if (post.date.indexOf(year) !== -1) { %>
+                                    <div class="mdui-col mdui-p-a-1">
+                                       <article class="archives-list mdui-shadow-15  mdui-hoverable ">
+                                           <a href="<%= post.link %>">
+                                           <div class="archives-img" <% if (themeConfig.showFeatureImage && post.feature) { %> style="background-image:url(<%= post.feature %>" <% } %>>
+                                           </div>
+                                           <div class="mdui-p-a-2">
+                                           <div class="mdui-typo-headline mdui-text-truncate index-list-title"><%= post.title %></div>
+                                           <div class="mdui-typo-title mdui-m-t-1 mdui-text-color-blue-grey-200"><%= post.dateFormat %></div>
+                                           </div>
+                                        </a>
+                                       </article> 
+                                    </div>
+                                    
+             <% } %>
+            <% }); %>
+              <% }); %>
+                                  </div>
+           <%- include('./includes/yema') %>
+                         
+                        </div>
+                 </div>
+          </div>
+          </div>
+        </div>
+         </div>
+        <%- include('./includes/footer') %>
+    </body>
+</html>

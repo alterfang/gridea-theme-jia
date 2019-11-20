@@ -1,7 +1,6 @@
 # gridea-theme-jia
 ***
-个人博客：[Shanbu.fun ](https:shanbu.fun)
-示范网址：https://day.fands.top/
+
 ***
 ### 首页：
 ![mbd_1569514095664008804.jpg](https://i.loli.net/2019/10/29/fPbaYk8ZKij3QlV.jpg)
